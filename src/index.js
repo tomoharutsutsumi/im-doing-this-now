@@ -2,15 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import configureStore from './store/configureStore'
 import { Provider } from 'react-redux';
-import { App } from './components/App'
+import AppRouter from './routers/AppRouter';
 
 const store = configureStore()
 
 const Root = (
   <Provider store = {store}>
-    <App/>
+    <AppRouter/>
   </Provider>
 )  
-
 
 ReactDOM.render(Root , document.getElementById('root'));
