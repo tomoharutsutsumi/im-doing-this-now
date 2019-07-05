@@ -45,7 +45,6 @@ export default class AddTaskForm extends React.Component {
   render() {
     return (
       <div>
-         <NavLink to="/" activeClassName="is-active" exact={true}>home page</NavLink>
         <form onSubmit={this.onSubmit}>
           <input
             type="text"
