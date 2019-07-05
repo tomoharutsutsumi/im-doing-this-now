@@ -5,7 +5,8 @@ export const addTask = (
 		worker = '',
 		start_date = 0,
 		deadline_date = 0,
-		contents = ''
+    contents = '',
+    is_finished = false
 	}
 ) => ({
 	type: 'ADD_TASK',
@@ -15,6 +16,13 @@ export const addTask = (
 		worker,
 		start_date,
 		deadline_date,
-		contents
+    contents,
+    is_finished
 	}
+})
+
+export const finishTask = (id, is_finished) => ({
+  type: 'FINISH_TASK',
+  id,
+  is_finished
 })
