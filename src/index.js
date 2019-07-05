@@ -6,7 +6,6 @@ import AppRouter from './routers/AppRouter';
 import { addTask } from './actions/tasks';
 
 const store = configureStore()
-console.log(store.getState())
 store.dispatch(addTask({ requester: "テスト", worker: "テスト", start_date: 1221}))
 
 const Root = (

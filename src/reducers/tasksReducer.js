@@ -1,5 +1,4 @@
 const defaultState = []; 
-// なぜこれは配列なのか=> stateのなかでひとかたまりであるitemを複数管理するため、その構造上
 
 export default (state = defaultState, action) => {
   switch (action.type) {

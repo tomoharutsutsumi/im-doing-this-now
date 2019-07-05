@@ -6,7 +6,6 @@ import { finishTask } from '../actions/tasks'
 const IndexTaskPage = (props) => (
   <div>
     {props.tasks.map((task) => {
-      console.log(task)
       if (task.is_finished) return null
       return <TaskItem 
         key={task.id}{...task}
@@ -18,7 +17,7 @@ const IndexTaskPage = (props) => (
   </div>
 )
 
-const mapStateToProps = (state, props) => {
+const mapStateToProps = (state) => {
   return {
     tasks: state
   }
