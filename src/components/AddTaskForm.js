@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
 
 export default class AddTaskForm extends React.Component {
   constructor(props) {
@@ -9,7 +8,8 @@ export default class AddTaskForm extends React.Component {
       worker: '',
       start_date: 0,
       deadline_date: 0,
-      contents: ''
+      contents: '',
+      error: ''
     }
   }
   onRequesterChange = (e) => {
@@ -34,18 +34,23 @@ export default class AddTaskForm extends React.Component {
   }
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmit({
-      requester: this.state.requester,
-      worker: this.state.worker,
-      start_date: this.state.start_date,
-      deadline_date: this.state.deadline_date,
-      contents: this.state.contents
-    })
+    if (!this.state.requester || !this.state.worker || !this.state.start_date || !this.state.deadline_date || !this.state.contents) {
+      this.setState(() => ({ error: "There are vacant inputs" }))
+    } else {
+      this.props.onSubmit({
+        requester: this.state.requester,
+        worker: this.state.worker,
+        start_date: this.state.start_date,
+        deadline_date: this.state.deadline_date,
+        contents: this.state.contents
+      })
+    }
   }
   render() {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
+          <p>{this.state.error}</p>
           <input
             type="text"
             placeholder="Who is a requester?"
