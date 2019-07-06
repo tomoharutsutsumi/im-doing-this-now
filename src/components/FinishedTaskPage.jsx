@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { TaskItem } from './TaskItem';
+import TaskItem from './TaskItem';
 
 const FinishedTaskPage = props => (
   <div>

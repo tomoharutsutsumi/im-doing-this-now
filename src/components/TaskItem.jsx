@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const TaskItem = ({
+export default ({
   requester, worker, startDate, deadLineDate, contents, isFinished, onClick,
 }) => (
   <div>

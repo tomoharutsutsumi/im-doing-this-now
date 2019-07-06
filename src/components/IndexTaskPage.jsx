@@ -1,18 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { TaskItem } from './TaskItem';
+import TaskItem from './TaskItem';
 import { finishTask } from '../actions/tasks';
 
-const IndexTaskPage = props => (
+const IndexTaskPage = ({ dispatch, tasks }) => (
   <div>
-    {props.tasks.map((task) => {
+    {tasks.map((task) => {
       if (task.isFinished) return null;
       return (
         <TaskItem
           key={task.id}
           {...task}
           onClick={() => {
-            props.dispatch(finishTask(task.id, { isFinished: true }));
+            dispatch(finishTask(task.id, { isFinished: true }));
           }}
         />
       );
