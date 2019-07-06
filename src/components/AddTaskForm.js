@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'
 
 export default class AddTaskForm extends React.Component {
   constructor(props) {
@@ -7,45 +6,58 @@ export default class AddTaskForm extends React.Component {
     this.state = {
       requester: '',
       worker: '',
-      start_date: 0,
-      deadline_date: 0,
-      contents: ''
-    }
+      startDate: 0,
+      deadLineDate: 0,
+      contents: '',
+      error: '',
+    };
   }
+
   onRequesterChange = (e) => {
-    const requester = e.target.value
-    this.setState(() => ({ requester }))
+    const requester = e.target.value;
+    this.setState(() => ({ requester }));
   }
+
   onWorkerChange = (e) => {
-    const worker = e.target.value
-    this.setState(() => ({ worker }))
+    const worker = e.target.value;
+    this.setState(() => ({ worker }));
   }
+
   onStartDateChange = (e) => {
-    const start_date = e.target.value 
-    this.setState(() => ({ start_date }))
+    const startDate = e.target.value;
+    this.setState(() => ({ startDate }));
   }
-  onDeadlineDateChange　= (e) => {
-    const deadline = e.target.value
-    this.setState(() => ({ deadline: deadline }))
+
+  onDeadlineDateChange = (e) => {
+    const deadLineDate = e.target.value;
+    this.setState(() => ({ deadLineDate }));
   }
+
   onContentsChange = (e) => {
-    const contents = e.target.value
-    this.setState(() => ({ contents }))
+    const contents = e.target.value;
+    this.setState(() => ({ contents }));
   }
+
   onSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmit({
-      requester: this.state.requester,
-      worker: this.state.worker,
-      start_date: this.state.start_date,
-      deadline_date: this.state.deadline_date,
-      contents: this.state.contents
-    })
+    if (!this.state.requester || !this.state.worker || !this.state.start_date || !this.state.deadline_date || !this.state.contents) {
+      this.setState(() => ({ error: 'There are vacant inputs' }));
+    } else {
+      this.props.onSubmit({
+        requester: this.state.requester,
+        worker: this.state.worker,
+        start_date: this.state.startDate,
+        deadline_date: this.state.deadLineDate,
+        contents: this.state.contents,
+      });
+    }
   }
+
   render() {
     return (
       <div>
         <form onSubmit={this.onSubmit}>
+          <p>{this.state.error}</p>
           <input
             type="text"
             placeholder="Who is a requester?"
@@ -74,6 +86,6 @@ export default class AddTaskForm extends React.Component {
           <button>Add Task</button>
         </form>
       </div>
-    )
+    );
   }
 }

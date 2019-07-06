@@ -12,7 +12,7 @@ export default (state = defaultState, action) => {
         if (task.id === action.id) {
           return {
             ...task,
-            ...action.is_finished
+            ...action.isFinished
           }
         } else {
           return task;
