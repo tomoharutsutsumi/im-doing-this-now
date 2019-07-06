@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import configureStore from './store/configureStore';
-import AppRouter from './routers/AppRouter';
-import { addTask } from './actions/tasks';
+import configureStore from './store/configureStore.jsx';
+import AppRouter from './routers/AppRouter.jsx';
+import { addTask } from './actions/tasks.jsx';
 
 const store = configureStore();
-store.dispatch(addTask({ requester: 'テスト', worker: 'テスト', start_date: 1221 }));
+store.dispatch(addTask({ requester: 'テスト', worker: 'テスト', startDate: 1221 }));
 
 const Root = (
   <Provider store={store}>
