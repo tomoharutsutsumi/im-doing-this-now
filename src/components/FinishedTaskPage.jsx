@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { TaskItem } from './TaskItem';
+import TaskItem from './TaskItem';
 
-const FinishedTaskPage = props => (
+const FinishedTaskPage = ({ tasks }) => (
   <div>
     <p>FinishedTask</p>
-    {props.tasks.map((task) => {
+    {tasks.map((task) => {
       if (task.isFinished) return <TaskItem key={task.id} {...task} />;
       return null;
     })}

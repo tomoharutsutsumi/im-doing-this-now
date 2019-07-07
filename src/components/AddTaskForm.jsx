@@ -1,4 +1,8 @@
 import React from 'react';
+import 'react-dates/initialize';
+import { SingleDatePicker } from 'react-dates';
+import 'react-dates/lib/css/_datepicker.css';
+import moment from 'moment';
 
 export default class AddTaskForm extends React.Component {
   constructor(props) {
@@ -6,10 +10,11 @@ export default class AddTaskForm extends React.Component {
     this.state = {
       requester: '',
       worker: '',
-      startDate: 0,
-      deadLineDate: 0,
+      startDate: moment(),
+      deadLineDate: moment(),
       contents: '',
       error: '',
+      focused: false,
     };
   }
 
@@ -21,16 +26,6 @@ export default class AddTaskForm extends React.Component {
   onWorkerChange = (e) => {
     const worker = e.target.value;
     this.setState(() => ({ worker }));
-  }
-
-  onStartDateChange = (e) => {
-    const startDate = e.target.value;
-    this.setState(() => ({ startDate }));
-  }
-
-  onDeadlineDateChange = (e) => {
-    const deadLineDate = e.target.value;
-    this.setState(() => ({ deadLineDate }));
   }
 
   onContentsChange = (e) => {
@@ -46,8 +41,8 @@ export default class AddTaskForm extends React.Component {
       this.props.onSubmit({
         requester: this.state.requester,
         worker: this.state.worker,
-        start_date: this.state.startDate,
-        deadline_date: this.state.deadLineDate,
+        startDate: this.state.startDate.format('MM-DD-YYYY'),
+        deadLineDate: this.state.deadLineDate.format('MM-DD-YYYY'),
         contents: this.state.contents,
       });
     }
@@ -69,21 +64,18 @@ export default class AddTaskForm extends React.Component {
             placeholder="Who takes charge of this task?"
             onChange={this.onWorkerChange}
           />
-          <input
-            type="number"
-            placeholder="When does this task begin?"
-            onChange={this.onStartDateChange}
-          />
-          <input
-            type="number"
-            placeholder="When is this task going to be done?"
-            onChange={this.onDeadlineDateChange}
+          <SingleDatePicker
+            numberOfMonths={1}
+            onDateChange={deadLineDate => this.setState({ deadLineDate })}
+            onFocusChange={({ focused }) => this.setState({ focused })}
+            focused={this.state.focused}
+            date={this.state.deadLineDate}
           />
           <textarea
             placeholder="What is this task?"
             onChange={this.onContentsChange}
           />
-          <button>Add Task</button>
+          <button>Begin Task</button>
         </form>
       </div>
     );

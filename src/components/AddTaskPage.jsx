@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { addTask } from '../actions/tasks';
 import AddTaskForm from './AddTaskForm';
 
-const AddTaskPage = props => (
+const AddTaskPage = ({ dispatch, task }) => (
   <div>
     <p>Add Task</p>
     <AddTaskForm
+      task={task}
       onSubmit={(task) => {
-        props.dispatch(addTask(task));
+        dispatch(addTask(task));
       }}
     />
   </div>
