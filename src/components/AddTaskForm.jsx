@@ -11,7 +11,7 @@ export default class AddTaskForm extends React.Component {
       requester: '',
       worker: '',
       startDate: moment(),
-      deadLineDate: moment(),
+      deadlineDate: moment(),
       contents: '',
       error: '',
       focused: false,
@@ -35,14 +35,14 @@ export default class AddTaskForm extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    if (!this.state.requester || !this.state.worker || !this.state.startDate || !this.state.deadLineDate || !this.state.contents) {
+    if (!this.state.requester || !this.state.worker || !this.state.startDate || !this.state.deadlineDate || !this.state.contents) {
       this.setState(() => ({ error: 'There are vacant inputs' }));
     } else {
       this.props.onSubmit({
         requester: this.state.requester,
         worker: this.state.worker,
         startDate: this.state.startDate.format('MM-DD-YYYY'),
-        deadLineDate: this.state.deadLineDate.format('MM-DD-YYYY'),
+        deadlineDate: this.state.deadlineDate.format('MM-DD-YYYY'),
         contents: this.state.contents,
       });
     }
@@ -66,10 +66,10 @@ export default class AddTaskForm extends React.Component {
           />
           <SingleDatePicker
             numberOfMonths={1}
-            onDateChange={deadLineDate => this.setState({ deadLineDate })}
+            onDateChange={deadlineDate => this.setState({ deadlineDate })}
             onFocusChange={({ focused }) => this.setState({ focused })}
             focused={this.state.focused}
-            date={this.state.deadLineDate}
+            date={this.state.deadlineDate}
           />
           <textarea
             placeholder="What is this task?"

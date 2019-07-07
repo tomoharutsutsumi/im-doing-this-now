@@ -1,9 +1,15 @@
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
 import TaskItem from './TaskItem';
 import { finishTask } from '../actions/tasks';
 
-const IndexTaskPage = ({ dispatch, tasks }) => (
+type Props = {
+  dispatch: (e: Event) => void,
+  tasks: Array<any>
+}
+
+const IndexTaskPage = ({ dispatch, tasks }: Props) => (
   <div>
     {tasks.map((task) => {
       if (task.isFinished) return null;

@@ -1,8 +1,13 @@
+// @flow
 import React from 'react';
 import { connect } from 'react-redux';
 import TaskItem from './TaskItem';
 
-const FinishedTaskPage = ({ tasks }) => (
+type Props = {
+  tasks: Array<any>
+}
+
+const FinishedTaskPage = ({ tasks }: Props) => (
   <div>
     <p>FinishedTask</p>
     {tasks.map((task) => {
