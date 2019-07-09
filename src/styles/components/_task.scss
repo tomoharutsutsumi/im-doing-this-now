@@ -1,0 +1,25 @@
+.task-item {
+  margin: $s-size;
+  border: 0.1rem $green solid;
+  display: inline-block;
+  width: 60rem;
+  &__button {
+    float: right;
+    margin: $xs-size;
+  }
+  &__requester {
+    margin: $xs-size;
+  }
+  &__worker {
+    margin: $xs-size;
+  }
+  &__start-date {
+    margin: $xs-size;
+  }
+  &__deadline-date {
+    margin: $xs-size;
+  }
+  &__contents {
+    margin: $xs-size;
+  }
+}
