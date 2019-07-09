@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: $s-size;
+  background: $light-orange;
+}
+
+.header__links {
+  margin: $m-size;
+}
+
+.header__link {
+  margin: $s-size;
+  color: $black;
+}

@@ -2,11 +2,13 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => (
-  <header>
-    <h1>pages</h1>
-    <NavLink to="/" activeClassName="is-active" exact>home page</NavLink>
-    <NavLink to="/create" activeClassName="is-active">add task</NavLink>
-    <NavLink to="/finished" activeClassName="is-active">finished tasks</NavLink>
+  <header className="header">
+    <h1 className="header__title">I'm doing this now!</h1>
+    <div className="header__links">
+      <NavLink to="/" className="header__link" activeClassName="is-active" exact>home page</NavLink>
+      <NavLink to="/create" className="header__link" activeClassName="is-active">add task</NavLink>
+      <NavLink to="/finished" className="header__link" activeClassName="is-active">finished tasks</NavLink>
+    </div>
   </header>
 );
 

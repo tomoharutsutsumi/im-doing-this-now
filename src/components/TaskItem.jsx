@@ -14,12 +14,27 @@ type Props = {
 export default ({
   requester, worker, startDate, deadlineDate, contents, isFinished, onClick,
 }: Props) => (
-  <div>
-    <p>{requester}</p>
-    <p>{worker}</p>
-    <p>{startDate}</p>
-    <p>{deadlineDate}</p>
-    <p>{contents}</p>
-    {!isFinished && <p onClick={onClick}>Finished</p>}
+  <div className="task-item">
+    {!isFinished && <div className="task-item__button" onClick={onClick}>Finished</div>}
+    <div className="task-item__requester">
+    Requester:
+      {requester}
+    </div>
+    <div className="task-item__worker">
+    Worker:
+      {worker}
+    </div>
+    <div className="task-item__start-date">
+    StartDate:
+      {startDate}
+    </div>
+    <div className="task-item__deadline-date">
+    DeadlineDate:
+      {deadlineDate}
+    </div>
+    <div className="task-item__contents">
+    Contents:
+      {contents}
+    </div>
   </div>
 );
