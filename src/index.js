@@ -7,9 +7,10 @@ import { addTask } from './actions/tasks.jsx';
 import './styles/styles.scss';
 
 const store = configureStore();
-store.dispatch(addTask({
-  requester: 'テスト', worker: 'テスト', startDate: 1221, contents: 'ここをこうして、こうして、こうするとともに、これもこうする',
-}));
+// const n = moment(new Date(2018, 11, 11));
+// store.dispatch(addTask({
+//   requester: 'テスト', worker: 'テスト', deadlineDate: n, contents: 'ここをこうして、こうして、こうするとともに、これもこうする',
+// }));
 
 const Root = (
   <Provider store={store}>
