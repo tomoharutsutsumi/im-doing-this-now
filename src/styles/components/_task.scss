@@ -22,4 +22,7 @@
   &__contents {
     margin: $xs-size;
   }
+  &--expired {
+    border: 0.1rem $red solid;
+  }
 }

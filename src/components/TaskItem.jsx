@@ -7,14 +7,16 @@ type Props = {
   startDate: Date,
   deadlineDate: Date,
   contents: String,
-  isFinished: boolean,
+  isFinished: Boolean,
+  expired: Boolean,
   onClick: (e: Event) => void
 }
 
 export default ({
-  requester, worker, startDate, deadlineDate, contents, isFinished, onClick,
+  requester, worker, startDate, deadlineDate, contents, isFinished, expired, onClick,
 }: Props) => (
-  <div className="task-item">
+  <div className={expired ? 'task-item--expired' : 'task-item'}>
+    {expired && <div>This task is expired</div>}
     {!isFinished && <div className="task-item__button" onClick={onClick}>Finished</div>}
     <div className="task-item__requester">
     Requester:

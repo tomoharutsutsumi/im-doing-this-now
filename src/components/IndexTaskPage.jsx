@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import TaskItem from './TaskItem';
 import { finishTask } from '../actions/tasks';
+import selectExpiredTasks from '../selectors/selectExpiredTasks';
 
 type Props = {
   dispatch: (e: Event) => void,
@@ -17,6 +18,7 @@ const IndexTaskPage = ({ dispatch, tasks }: Props) => (
         <TaskItem
           key={task.id}
           {...task}
+          expired={selectExpiredTasks(task)}
           onClick={() => {
             dispatch(finishTask(task.id, { isFinished: true }));
           }}
