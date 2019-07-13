@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { withRouter } from 'react-router-dom';
 
@@ -9,21 +9,31 @@ type Props = {
   history: Object
 }
 
-const FinishModal = ({ isOpen, finishTask, history }: Props) => (
-  <Modal
-    isOpen={isOpen}
-    contentLabel="Finish Modal"
-  >
-    <button
-      type="button"
-      onClick={() => {
-        finishTask();
-        history.push('/finished');
-      }}
+const FinishModal = ({ isOpen, finishTask, history }: Props) => {
+  const [checker, register] = useState('');
+  const updateCheckedBy = (e) => {
+    register(e.target.value);
+  };
+  return (
+    <Modal
+      isOpen={isOpen}
+      contentLabel="Finish Modal"
     >
+
+      <input type="text" onChange={updateCheckedBy} />
+      {' '}
+checked this task
+      <button
+        type="button"
+        onClick={() => {
+          finishTask(checker);
+          history.push('/finished');
+        }}
+      >
 Do you finish this task?
-    </button>
-  </Modal>
-);
+      </button>
+    </Modal>
+  );
+};
 
 export default withRouter(FinishModal);

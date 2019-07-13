@@ -32,7 +32,7 @@ const IndexTaskPage = ({ dispatch, tasks }: Props) => {
       })}
       <FinishModal
         isOpen={modalIsOpen}
-        finishTask={() => dispatch(finishTask(taskId, { isFinished: true }))}
+        finishTask={checkedBy => dispatch(finishTask(taskId, { isFinished: true }, checkedBy))}
       />
     </div>
   );
