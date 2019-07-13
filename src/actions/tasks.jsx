@@ -22,8 +22,11 @@ export const addTask = (
   },
 });
 
-export const finishTask = (id, isFinished) => ({
+export const finishTask = (id, isFinished, checker) => ({
   type: 'FINISH_TASK',
   id,
-  isFinished,
+  payload: {
+    isFinished,
+    checker,
+  },
 });
