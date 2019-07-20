@@ -7,9 +7,23 @@ import { addTask } from './actions/tasks.jsx';
 import './styles/styles.scss';
 
 const store = configureStore();
-// const n = moment(new Date(2018, 11, 11));
 // store.dispatch(addTask({
-//   requester: 'テスト', worker: 'テスト', deadlineDate: n, contents: 'ここをこうして、こうして、こうするとともに、これもこうする',
+//   requester: 'テスト', worker: 'テスト', startDate: 3, contents: 'ここをこうして、こうして、こうするとともに、これもこうする',
+// }));
+// store.dispatch(addTask({
+//   requester: 'テスト', worker: 'テスト', startDate: 5, contents: 'ここをこうして、こうして、こうするとともに、これもこうする',
+// }));
+// store.dispatch(addTask({
+//   requester: 'テスト', worker: 'テスト', startDate: 30, contents: 'ここをこうして、こうして、こうするとともに、これもこうする',
+// }));
+// store.dispatch(addTask({
+//   requester: 'テスト', worker: 'テスト', startDate: 1, contents: 'ここをこうして、こうして、こうするとともに、これもこうする',
+// }));
+// store.dispatch(addTask({
+//   requester: 'テスト', worker: 'テスト', startDate: 100, contents: 'ここをこうして、こうして、こうするとともに、これもこうする',
+// }));
+// store.dispatch(addTask({
+//   requester: 'テスト', worker: 'テスト', startDate: 2, contents: 'ここをこうして、こうして、こうするとともに、これもこうする',
 // }));
 
 const Root = (

@@ -35,7 +35,6 @@ export default class AddTaskForm extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    console.log(e);
     if (!this.state.requester || !this.state.worker || !this.state.startDate || !this.state.deadlineDate || !this.state.contents) {
       this.setState(() => ({ error: 'There are vacant inputs' }));
     } else {
