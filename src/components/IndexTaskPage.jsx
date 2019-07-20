@@ -5,6 +5,7 @@ import TaskItem from './TaskItem';
 import { finishTask } from '../actions/tasks';
 import selectExpiredTasks from '../selectors/selectExpiredTasks';
 import FinishModal from './FinishModal';
+import sortTasks from '../selectors/sortTasks';
 
 type Props = {
   dispatch: (e: Event) => void,
@@ -38,7 +39,7 @@ const IndexTaskPage = ({ dispatch, tasks }: Props) => {
   );
 };
 const mapStateToProps = state => ({
-  tasks: state.tasks,
+  tasks: sortTasks(state.tasks),
 });
 
 export default connect(mapStateToProps)(IndexTaskPage);
