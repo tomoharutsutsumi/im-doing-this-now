@@ -19,7 +19,6 @@ const FinishModal = ({ isOpen, finishTask, history }: Props) => {
       isOpen={isOpen}
       contentLabel="Finish Modal"
     >
-
       <input type="text" onChange={updateCheckedBy} />
       {' '}
 checked this task
@@ -27,7 +26,12 @@ checked this task
         type="button"
         onClick={() => {
           finishTask(checker);
-          history.push('/finished');
+          history.push({
+            pathname: '/finished',
+            state: {
+              message: 'Congratulation! you finished task!',
+            },
+          });
         }}
       >
 Do you finish this task?
