@@ -51,7 +51,7 @@
     "flow-bin": "^0.102.0",
     "react-router-dom": "^5.0.1",
     "uuid": "^3.3.2",
-    "webpack": "^4.35.3",
+    "webpack": "^4.29.6",
     "webpack-cli": "^3.3.5"
   }
 }

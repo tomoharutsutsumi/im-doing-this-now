@@ -4,12 +4,14 @@ import { connect } from 'react-redux';
 import TaskItem from './TaskItem';
 
 type Props = {
-  tasks: Array<any>
+  tasks: Array<any>,
+  location: Object
 }
 
-const FinishedTaskPage = ({ tasks }: Props) => (
+const FinishedTaskPage = ({ tasks, location }: Props) => (
   <div>
     <p>FinishedTask</p>
+    <p>{location.state && location.state.message}</p>
     {tasks.map((task) => {
       if (task.isFinished) return <TaskItem key={task.id} {...task} />;
       return null;
@@ -18,7 +20,7 @@ const FinishedTaskPage = ({ tasks }: Props) => (
 );
 
 const mapStateToProps = state => ({
-  tasks: state,
+  tasks: state.tasks,
 });
 
 export default connect(mapStateToProps)(FinishedTaskPage);
