@@ -4,6 +4,7 @@ import FinishedTaskPage from '../components/FinishedTaskPage';
 import IndexTaskPage from '../components/IndexTaskPage';
 import AddTaskPage from '../components/AddTaskPage';
 import Header from '../components/Header';
+import NotFoundPage from '../components/NotFoundPage';
 
 const AppRouter = () => (
   <BrowserRouter>
@@ -13,6 +14,7 @@ const AppRouter = () => (
         <Route path="/" component={IndexTaskPage} exact />
         <Route path="/create" component={AddTaskPage} />
         <Route path="/finished" component={FinishedTaskPage} />
+        <Route component={NotFoundPage} />
       </Switch>
     </div>
   </BrowserRouter>
