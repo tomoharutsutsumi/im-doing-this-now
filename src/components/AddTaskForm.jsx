@@ -35,6 +35,7 @@ export default class AddTaskForm extends React.Component {
 
   onSubmit = (e) => {
     e.preventDefault();
+    console.log(e);
     if (!this.state.requester || !this.state.worker || !this.state.startDate || !this.state.deadlineDate || !this.state.contents) {
       this.setState(() => ({ error: 'There are vacant inputs' }));
     } else {
@@ -45,6 +46,7 @@ export default class AddTaskForm extends React.Component {
         deadlineDate: this.state.deadlineDate.format('MM-DD-YYYY'),
         contents: this.state.contents,
       });
+      this.setState(() => ({ requester: '', worker: '', contents: '' }));
     }
   }
 
@@ -56,12 +58,14 @@ export default class AddTaskForm extends React.Component {
           <input
             type="text"
             placeholder="Who is a requester?"
+            value={this.state.requester}
             autoFocus
             onChange={this.onRequesterChange}
           />
           <input
             type="text"
             placeholder="Who takes charge of this task?"
+            value={this.state.worker}
             onChange={this.onWorkerChange}
           />
           <SingleDatePicker
@@ -73,6 +77,7 @@ export default class AddTaskForm extends React.Component {
           />
           <textarea
             placeholder="What is this task?"
+            value={this.state.contents}
             onChange={this.onContentsChange}
           />
           <button>Begin Task</button>
