@@ -18,7 +18,7 @@ const FinishedTaskPage = ({ tasks }: Props) => (
 );
 
 const mapStateToProps = state => ({
-  tasks: state,
+  tasks: state.tasks,
 });
 
 export default connect(mapStateToProps)(FinishedTaskPage);
