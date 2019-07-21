@@ -1,0 +1,37 @@
+.add-task {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.add-task__title {
+  display: inline-block;
+  font-size: $m-size;
+  padding: $xs-size 0 0 0;
+}
+
+.add-task__input {
+  border: 1px solid black;
+  margin: 0 0 $s-size 0;
+  height: 2rem;
+  width:15rem;
+  box-shadow: 2px 2px 4px $gray;
+}
+
+.add-task__item-title {
+  margin: $s-size 0 $xs-size 0;
+}
+
+.add-task__add-button {
+  background: $light-orange;
+  height: $m-size;
+  width: $xl-size;
+  box-shadow: 2px 2px 4px $gray;
+}
+
+.DateInput_input {
+  border: 1px solid black;
+  width: 85%;
+  box-shadow: 2px 2px 4px $gray;
+}

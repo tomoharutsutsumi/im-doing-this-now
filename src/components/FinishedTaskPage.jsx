@@ -10,8 +10,8 @@ type Props = {
 
 const FinishedTaskPage = ({ tasks, location }: Props) => (
   <div>
-    <p>FinishedTask</p>
-    <p>{location.state && location.state.message}</p>
+    <p className="finish-task__title">FinishedTask</p>
+    {location.state && <p className="flash">{location.state.message}</p>}
     {tasks.map((task) => {
       if (task.isFinished) return <TaskItem key={task.id} {...task} />;
       return null;

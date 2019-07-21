@@ -3,9 +3,14 @@
   border: 0.1rem $green solid;
   display: inline-block;
   width: 60rem;
+  box-shadow: 2px 2px 4px $gray;
   &__button {
     float: right;
     margin: $xs-size;
+    padding: $xs-size;
+    background: $green;
+    border-radius: 3px;
+    box-shadow: 2px 2px 4px $gray;
   }
   &__requester {
     margin: $xs-size;

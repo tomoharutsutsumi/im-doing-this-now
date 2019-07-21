@@ -1,4 +1,9 @@
-@import './base/base';
 @import './base/settings';
+@import './base/base';
 @import './components/header';
-@import './components/task'
+@import './components/task';
+@import './components/add-task';
+@import './components/flash';
+@import './components/finish-task';
+@import './components/index-task';
+@import './components/modal';
