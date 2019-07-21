@@ -7,6 +7,7 @@
 
 .add-task__title {
   font-size: $m-size;
+  padding: $xs-size 0 0 0;
 }
 
 .add-task__input {
@@ -27,5 +28,6 @@
 }
 
 .DateInput_input {
-  width: 80%;
+  border: 1px solid black;
+  width: 85%;
 }

@@ -12,7 +12,7 @@ type Props = {
 
 const AddTaskPage = ({ dispatch, flash }: Props) => (
   <div>
-    <p>{flash.display && flash.text}</p>
+    {flash.display && <p className="flash">{flash.text}</p>}
     <AddTaskForm
       onSubmit={(task) => {
         dispatch(addTask(task));
