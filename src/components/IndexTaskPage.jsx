@@ -15,8 +15,12 @@ type Props = {
 const IndexTaskPage = ({ dispatch, tasks }: Props) => {
   const [modalIsOpen, displayModal] = useState(false);
   const [taskId, selectId] = useState(0);
+  const closeModal = () => {
+    displayModal(false);
+  };
   return (
     <div>
+      <p className="index-task__title">Tasks being done</p>
       {tasks.map((task) => {
         if (task.isFinished) return null;
         return (
@@ -32,6 +36,7 @@ const IndexTaskPage = ({ dispatch, tasks }: Props) => {
         );
       })}
       <FinishModal
+        closeModal={closeModal}
         isOpen={modalIsOpen}
         finishTask={checkedBy => dispatch(finishTask(taskId, { isFinished: true }, checkedBy))}
       />

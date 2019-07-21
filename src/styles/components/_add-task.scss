@@ -6,6 +6,7 @@
 }
 
 .add-task__title {
+  display: inline-block;
   font-size: $m-size;
   padding: $xs-size 0 0 0;
 }

@@ -6,6 +6,9 @@
   &__button {
     float: right;
     margin: $xs-size;
+    padding: $xs-size;
+    background: $green;
+    border-radius: 3px;
   }
   &__requester {
     margin: $xs-size;

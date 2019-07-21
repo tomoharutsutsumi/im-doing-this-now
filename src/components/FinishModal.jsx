@@ -6,10 +6,13 @@ import { withRouter } from 'react-router-dom';
 type Props = {
   isOpen: Boolean,
   finishTask: (e: Event) => void,
+  closeModal: (e: Event) => void,
   history: Object
 }
 
-const FinishModal = ({ isOpen, finishTask, history }: Props) => {
+const FinishModal = ({
+  isOpen, finishTask, history, closeModal,
+}: Props) => {
   const [checker, register] = useState('');
   const updateCheckedBy = (e) => {
     register(e.target.value);
@@ -18,11 +21,15 @@ const FinishModal = ({ isOpen, finishTask, history }: Props) => {
     <Modal
       isOpen={isOpen}
       contentLabel="Finish Modal"
+      className="modal"
+      onRequestClose={closeModal}
+      shouldCloseOnOverlayClick
     >
       <input type="text" onChange={updateCheckedBy} />
       {' '}
 checked this task
       <button
+        className="modal__button"
         type="button"
         onClick={() => {
           finishTask(checker);
@@ -34,7 +41,7 @@ checked this task
           });
         }}
       >
-Do you finish this task?
+checked and finish this
       </button>
     </Modal>
   );
