@@ -12,7 +12,6 @@ type Props = {
 
 const AddTaskPage = ({ dispatch, flash }: Props) => (
   <div>
-    <p>Add Task</p>
     <p>{flash.display && flash.text}</p>
     <AddTaskForm
       onSubmit={(task) => {

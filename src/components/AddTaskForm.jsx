@@ -52,34 +52,43 @@ export default class AddTaskForm extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.onSubmit}>
+        <form className="add-task" onSubmit={this.onSubmit}>
+          <div className="add-task__title">Add Task</div>
           <p>{this.state.error}</p>
+          <div className="add-task__item-title">Who is a requester?</div>
           <input
+            className="add-task__input"
             type="text"
             placeholder="Who is a requester?"
             value={this.state.requester}
             autoFocus
             onChange={this.onRequesterChange}
           />
+          <div className="add-task__item-title">Who'll do this task?</div>
           <input
+            className="add-task__input"
             type="text"
-            placeholder="Who takes charge of this task?"
+            placeholder="Who'll do this task?"
             value={this.state.worker}
             onChange={this.onWorkerChange}
           />
+          <div className="add-task__item-title">When is a deadline?</div>
           <SingleDatePicker
+            className="add-task__input"
             numberOfMonths={1}
             onDateChange={deadlineDate => this.setState({ deadlineDate })}
             onFocusChange={({ focused }) => this.setState({ focused })}
             focused={this.state.focused}
             date={this.state.deadlineDate}
           />
+          <div className="add-task__item-title">What is this task?</div>
           <textarea
+            className="add-task__input"
             placeholder="What is this task?"
             value={this.state.contents}
             onChange={this.onContentsChange}
           />
-          <button>Begin Task</button>
+          <button className="add-task__add-button">Add Task</button>
         </form>
       </div>
     );

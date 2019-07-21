@@ -1,0 +1,31 @@
+.add-task {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.add-task__title {
+  font-size: $m-size;
+}
+
+.add-task__input {
+  border: 1px solid black;
+  margin: 0 0 $s-size 0;
+  height: 2rem;
+  width:15rem;
+}
+
+.add-task__item-title {
+  margin: $s-size 0 $xs-size 0;
+}
+
+.add-task__add-button {
+  background: $light-orange;
+  height: $m-size;
+  width: $xl-size;
+}
+
+.DateInput_input {
+  width: 80%;
+}
