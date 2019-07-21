@@ -16,6 +16,7 @@
   margin: 0 0 $s-size 0;
   height: 2rem;
   width:15rem;
+  box-shadow: 2px 2px 4px $gray;
 }
 
 .add-task__item-title {
@@ -26,9 +27,11 @@
   background: $light-orange;
   height: $m-size;
   width: $xl-size;
+  box-shadow: 2px 2px 4px $gray;
 }
 
 .DateInput_input {
   border: 1px solid black;
   width: 85%;
+  box-shadow: 2px 2px 4px $gray;
 }

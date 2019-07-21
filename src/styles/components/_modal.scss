@@ -35,8 +35,9 @@
 
 .modal__button {
   margin: 0 0 0 $xs-size;
-  border: $white-gray 1px solid;
+  border: $green 1px solid;
   padding: $xs-size;
   background: $green;
   font-size: $xs-size;
+  box-shadow: 2px 2px 4px $gray;
 }
