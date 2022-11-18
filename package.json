@@ -11,7 +11,7 @@
     "react-dom": "^16.8.6",
     "react-modal": "^3.8.2",
     "react-redux": "^7.1.0",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "redux": "^4.0.1"
   },
   "scripts": {
@@ -52,6 +52,6 @@
     "react-router-dom": "^5.0.1",
     "uuid": "^3.3.2",
     "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.5"
+    "webpack-cli": "^3.3.12"
   }
 }
